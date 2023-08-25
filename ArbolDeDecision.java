@@ -37,4 +37,22 @@ public class ArbolDeDecision {
         System.out.println("Entropía inicial: " + entropiaInicial);
     }
 
+    public static double calcularEntropia(List<Map<String, String>> datos) {
+        int totalPuntos = datos.size();
+        Map<String, Integer> claseContador = new HashMap<>();
+
+        for (Map<String, String> punto : datos) {
+            String clase = punto.get("Clase");
+            claseContador.put(clase, claseContador.getOrDefault(clase, 0) + 1);
+        }
+
+        double entropia = 0;
+        for (String clase : claseContador.keySet()) {
+            double probabilidad = (double) claseContador.get(clase) / totalPuntos;
+            entropia -= probabilidad * Math.log(probabilidad) / Math.log(2);
+        }
+
+        return entropia;
+    }
+
 }
