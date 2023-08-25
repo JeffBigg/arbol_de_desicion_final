@@ -1,8 +1,12 @@
 
 package arbol;
 
-class Fruta{
+import java.util.HashMap;
+import java.util.Map;
 
+
+class ArbolDecision{
+    
     
     
     
