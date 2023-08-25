@@ -11,7 +11,20 @@ class Fruta{
         this.color = color;
         this.esPequena = esPequena;
     }
-    
-    
-    
+}
+
+class ArbolDecision{
+    public static string clasificarFruta(Fruta fruta){
+        if(fruta.color.equals("rojo")){
+            if(fruta.esPequena){
+                return "Cereza";
+            }else{
+                return "Manzana ";
+            }
+        }else if(fruta.color.equals("amarillo")){
+            return "Platano";
+        }else {
+            return "Desconocido";
+        }
+    }
 }
