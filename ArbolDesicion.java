@@ -26,4 +26,20 @@ class ArbolDecision {
         return entropiaInicial - (pInicial * entropiaFinal);
     }
 
+    public static void main(String[] args) {
+        int totalSí = 9;
+        int totalNo = 5;
+        int totalInicial = totalSí + totalNo;
+
+        double entropiaInicial = calcularEntropia(totalSí, totalNo);
+        double gananciaClima = calcularGananciaInformacion(entropiaInicial, totalInicial, 2, 7);
+        double gananciaTemperatura = calcularGananciaInformacion(entropiaInicial, totalInicial, 4, 5);
+        double gananciaHumedad = calcularGananciaInformacion(entropiaInicial, totalInicial, 3, 6);
+
+        System.out.println("Entropía inicial: " + entropiaInicial);
+        System.out.println("Ganancia de información para Clima: " + gananciaClima);
+        System.out.println("Ganancia de información para Temperatura: " + gananciaTemperatura);
+        System.out.println("Ganancia de información para Humedad: " + gananciaHumedad);
+    }
+
 }
