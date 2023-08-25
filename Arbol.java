@@ -1,10 +1,10 @@
-
 package arbol;
 
 import java.util.HashMap;
 import java.util.Map;
 
-class ArbolDecision{
+class ArbolDecision {
+
     private static double calcularEntropia(int totalSí, int totalNo) {
         int total = totalSí + totalNo;
         double pSí = (double) totalSí / total;
@@ -20,8 +20,10 @@ class ArbolDecision{
         return entropia;
     }
 
-    
-    
-    
-    
+    private static double calcularGananciaInformacion(double entropiaInicial, int totalInicial, int totalSí, int totalNo) {
+        double pInicial = (double) totalInicial / (totalSí + totalNo);
+        double entropiaFinal = (calcularEntropia(totalSí, totalNo));
+        return entropiaInicial - (pInicial * entropiaFinal);
+    }
+
 }
