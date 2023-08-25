@@ -1,9 +1,0 @@
-
-package arbol;
-
-class Fruta{
-
-    
-    
-    
-}
